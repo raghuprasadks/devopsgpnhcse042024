@@ -54,6 +54,6 @@ Docker compose
 5. create database_students.sql,Dockerfile inside mysql folder
 6. to the program
 cd pydockersql
-docker compose-up
+docker-compose up
 
 
