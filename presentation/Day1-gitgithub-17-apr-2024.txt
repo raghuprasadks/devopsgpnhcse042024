@@ -1,0 +1,104 @@
+Software Engineering
+
+Software Development Life Cycle (SDLC)
+SAD
+TMC
+
+S - System Engineering (Requirements,system - software and hardware)
+A - Analysis
+D - Design 
+Functional requirements/Non functional requirements
+ity, scalability,availability,security
+
+C - Coding  - source code repo (git,github)
+T - Testing (unit testing,integration testing,system testing,
+user acceptance testing)
+M - Maintenance
+
+
+Waterfall model
+iterative model
+agile - scrum
+
+
+1. Introduction to Devops
+
+2. Pre-assessment test
+
+3. create gitdemo folder - done
+4. create index.html in the gitdemo folder - done
+(run on live server)
+5. create a local git repository
+6. push commit code to local git repository
+7. create gitdemo repository in github.com - create an account/login
+8. push the contents inside gitdemo folder to github's gitdemo repository
+
+
+
+…or create a new repository on the command line
+echo "# gitdemocse" >> README.md
+git init
+git add README.md
+git status
+git add index.html
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/raghuprasadks/gitdemocse.git
+git push -u origin main
+…or push an existing repository from the command line
+git remote add origin https://github.com/raghuprasadks/gitdemocse.git
+git branch -M main
+git push -u origin main
+
+commands to be executed only once
+git init
+git branch -M main
+git remote add origin https://github.com/raghuprasadks/gitdemocse.git
+
+when a file is added/modified following commands to be executed
+git status
+git add .
+git commit -m "modified index.html"
+git push -u origin main
+or 
+git push
+
+
+to clone the github repository
+
+git clone <repository url>
+
+create a folder referencegit
+cd referencegit
+git clone https://github.com/raghuprasadks/gitdemocse.git
+dir
+cd gitdemocse
+dir
+
+
+add contactus.html inside your gitdemo folder
+in cmd
+git add .
+git commit -m "added contactus.html"
+git push
+
+goto gitdemocse folder
+git pull
+
+
+1. Deploy sample webpage on github
+2. githubactions
+
+
+Creating python flask docker image
+
+steps
+1. Download and install python in the local system
+2. check the python version 
+using python --version in the command prompt
+3. pip install virtualenv
+
+pip install flask
+
+
+

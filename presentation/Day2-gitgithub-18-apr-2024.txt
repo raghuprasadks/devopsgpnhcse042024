@@ -1,0 +1,59 @@
+Agenda:
+1. Docker
+2. Docker-hub
+3. AWS - Creation of Account
+4. Exploring EC2
+5. Installation of docker on EC2 and pull image from docker-hub
+
+Dockerize a python flask application
+
+1. create pydocker folder
+2. cd pydocker
+3. create virtual environment
+python -m venv myenv
+4. activate virtual environment
+myenv\Scripts\activate
+5. Install docker extension
+6. pip freeze > requirements.txt
+keep only Flask
+7. to create a docker image 
+docker build -t my-flask-app .
+8. Run the docker image
+docker run -p 5000:5000 my-flask-app
+
+docker-hub
+create an account in https://hub.docker.com/
+signup
+
+1. create tag with your user of the dockerhub
+docker tag my-flask-app:latest raghuprasadkonandur/my-flask-app:latest
+2. push the image to the dockerhub
+docker push raghuprasadkonandur/my-flask-app:latest
+
+https://hub.docker.com/_/java
+
+
+FROM java:openjdk-8u111-alpine
+COPY . /usr/src/myapp
+WORKDIR /usr/src/myapp
+RUN javac Main.java
+CMD ["java", "Main"]
+
+
+$ docker build -t my-java-app .
+$ docker run -it --rm --name my-running-app my-java-app
+
+
+
+Docker compose
+
+1. create pydockersql folder
+2. create mysql and python folder inside pydockersql folder
+3. create docker-compose.yml inside pydockersql folder
+4. create hello_world.py and  Dockerfile inside python  folder
+5. create database_students.sql,Dockerfile inside mysql folder
+6. to the program
+cd pydockersql
+docker compose-up
+
+
