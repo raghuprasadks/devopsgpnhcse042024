@@ -1,0 +1,73 @@
+Agenda:
+Recap:
+git,github
+docker,dockerhub
+image,container,dockerfile,dockercompose
+1. Introduction to AWS
+2. AWS Services - S3,EC2,RDS,serverless etc
+3. Creation of virtual server using EC2
+4. Connecting Instance using putty,ssh,etc
+5. Deployment of python flask on EC2
+6. Setting up docker on EC2
+7. CI-CD using githubactions
+
+Cloud Computing
+
+Deployement model
+public,private,hybrid
+
+Service model
+IAAS - Infrastructure AS A Service
+PAAS - Platform AS A Service
+SAAS - Software AS A Service
+
+1. AWS
+2. Azure
+3. Google Cloud
+
+https://aws.amazon.com/
+
+https://aws.amazon.com/
+
+register using free tier
+download and install
+putty
+
+Services
+EC2 - Elastic Cloud Compute
+IAAS
+create virtual server
+
+Steps to create virtual server in AWS
+Step 1 - login to aws
+Step 2 - select mumbai as the data center
+Step 3 - Search EC2
+Step 4 - click EC2
+Step 5 - click Launch Instance
+
+name - gpnhcscdemo
+select ubuntu free tier
+
+click create new key pair
+
+key pair name - gpnhcscdemokey
+private key file format - .ppk
+
+click on create key pair
+keypair is downloaded
+
+create security group
+check on allow ssh,https,http
+
+click - launch instance
+
+click on the success message link
+
+
+
+
+
+
+
+
+https://aws.amazon.com/education/awseducate/
