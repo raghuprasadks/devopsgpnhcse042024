@@ -47,23 +47,41 @@ Step 5 - click Launch Instance
 
 name - gpnhcscdemo
 select ubuntu free tier
-
 click create new key pair
-
 key pair name - gpnhcscdemokey
 private key file format - .ppk
-
 click on create key pair
 keypair is downloaded
-
 create security group
 check on allow ssh,https,http
-
 click - launch instance
-
 click on the success message link
 
 
+Connect
+select the instance using check box
+and click connect
+
+vi test.txt
+press i to insert
+type some thing
+
+escape :wq!
+
+cat test.txt
+
+
+connect using putty
+click search and putty
+
+enter public ip
+save the connection
+connection -ssh-auth -credentials - update the ppk file which
+was downloaded
+
+login - ubuntu
+accept
+you have logged into the virtual server
 
 
 
