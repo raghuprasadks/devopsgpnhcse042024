@@ -1,0 +1,175 @@
+Recap:
+1. Cloud Computing
+2. Cloud Computing models 
+Deployment model - public,private,hybrid
+Service Model - IAAS,PAAS,SAAS
+3. git and github
+create a website
+source code in github
+
+4. docker and docker hub
+5. AWS
+Virtual Server - EC2 
+connecting to virtual server using - connect option of aws
+connecting using putty
+connecting using ssh
+
+Agenda for today's class
+1. AWS S3
+2. Static webhosting on S3
+3. Installation of nginx webserver
+4. Hosting application on nginx
+5. Continous Integration/Continous deployment using githubactions - CI/CD
+6. Serverless application hosting
+7. jenkins (CI/CD)
+8. Terraform - infrastructure as a code
+
+
+
+Assignment
+
+1. create mywebsite folder - done 
+2. add index.html,about.html and contactus.html - done
+
+3. create mywebsite repository in github.com - done
+to execute git commands .. you should have installed git in your local system
+
+git init
+git add .
+git commit -m "first commit"
+
+Set your username: git config --global user.name "FIRST_NAME LAST_NAME"
+Set your email address: git config --global user.email "MY_NAME@example.com"
+git branch -M main
+
+git remote add origin https://github.com/raghuprasadks/mywebsite.git
+git push -u origin main
+
+4. create localgit repo - done
+5. push the code to github.com  - done
+6. host the website on github pages and share the weburl
+
+in github.com
+settings - pages
+branch - main - save
+
+you will get link for your website - 
+
+https://raghuprasadks.github.io/mywebsite/
+
+add one more page hobby.html
+write about you hobbies and check in the code to github
+
+git status
+git add .
+git commit -m "updated"
+git push
+
+
+
+Practice session
+
+1 . download and install nginx on your system
+nginx - webserver 
+
+https://nginx.org/en/download.html
+
+under stable
+locate for 	nginx/Windows-1.24.0
+click and download
+extract.
+copy the extracted folder into c drive or user folder
+
+in command prompt
+enter nginx
+in browser
+ localhost
+
+hosting website on nginx
+
+open nginx.conf folder which is inside conf folder
+
+locate server section
+
+server {
+        listen       80;
+        server_name  localhost;
+
+        #charset koi8-r;
+
+        #access_log  logs/host.access.log  main;
+
+        location / {
+            root   D://kaushalya/consultancy/newhorizonenggcollege/2024/cse/devops/assignment/mywebsite;
+            index  index.html index.htm;
+        }
+
+
+
+to stop and restart the server
+Control c
+nginx -s stop
+nginx
+
+
+Steps for CI/CD with githubactions and aws EC2
+
+1. Create ec2instance having ubuntu as the os
+give name as mywebsiteec2
+
+login to aws
+search for ec2
+create new instance with the name mywebsiteec2
+
+create key-value pair give name as mywebsiteec2_key
+enable port 80,443
+
+connect ec2 instance using ssh (secure shell protocol)
+
+execute following using gitbash by changing directory to the folder
+where .pem file (mywebsiteec2_key) is downloaded
+
+ cd /D/kaushalya/consultancy/newhorizonenggcollege/2024/cse/devops/sandbox/aws
+
+chmod 400 "mywebsiteec2_key.pem"
+
+ssh -i "mywebsiteec2_key.pem" ubuntu@ec2-13-201-187-146.ap-south-1.compute.amazonaws.com
+
+
+to connect with putty 
+you have to create another key value pair with extension .ppk
+
+
+2. In mywebsite you have set the secreat key value 
+for 
+ssh_key
+host
+user
+target
+
+goto mywebsite github
+settings - secreate and variables
+actions - new repository secreate
+
+EC2_SSH_KEY - content of private key i,e content of ppk file
+
+HOST_DNS - ec2-13-201-187-146.ap-south-1.compute.amazonaws.com
+USERNAME - ubuntu
+TARGET_DIR - home
+
+in mywebsite..
+create following folder
+.github/workflows/main.yml
+
+
+
+
+
+
+
+
+
+
+
+
+

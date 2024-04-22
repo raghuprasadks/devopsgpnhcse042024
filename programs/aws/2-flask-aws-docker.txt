@@ -1,7 +1,6 @@
 https://github.com/raghuprasadks/devopsgpnhcse042024
 1. in local system..
 create aws folder
-
 create app.py,Dockerfile and requirements.txt inside aws folder
 
 docker build -t my-flask-app-aws .
@@ -9,14 +8,12 @@ docker run -p 5000:5000 my-flask-app-aws
 docker login
 docker tag my-flask-app-aws:latest raghuprasadkonandur/my-flask-app-aws:latest
 docker push raghuprasadkonandur/my-flask-app-aws:latest
-
 2. in aws
 create ec2 instance with ubuntu - flaskawsdocker
 sudo apt-get update
 sudo apt install docker.io
 sudo systemctl start docker
 sudo docker run -p 80:5000 raghuprasadkonandur/my-flask-app-aws
-
 open the flask application with the publicip
 
 
