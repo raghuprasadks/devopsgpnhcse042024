@@ -1,0 +1,5 @@
+Agenda:
+1. Ansible - IT - Automation of jobs
+2. Terraform - Service as infrastructure
+code as infrastructure 
+3. Jenkins - CI/CD - similar to git hub actions

@@ -1,0 +1,51 @@
+step 1 - create ansible_source ec2 instance
+step 2 - create ansible_target ec2 instance
+step 3 - connect to ansible_source
+execute following commands
+sudo apt update
+sudo apt install ansible
+ansible --version
+step 4 - for password less authentication
+
+password less authentication
+
+in ansible_source
+ssh-keygen
+/home/ubuntu/.ssh
+
+cat /home/ubuntu/.ssh/id_rsa.pub
+
+in ansible_target
+ssh-keygen
+
+copy the public key of the ansible-ansible_source
+
+cat id_rsa.pub
+
+###ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDH+uA2BAsMKQowvrwBRx0iTf0LdPyxUpziaXFZ2N+thykw7oMu+vkCI0kHKGXUrbzlWmES7FPpg3cgvIgwpVrJkNMCDnRsi/yiJJUuUmy7vNEm/Ow/aeXA6i4CWx9o21bR4WMaOcdvh/e7yyJvriBy8YsCCuwLDyvppWkdLyzp1wvikZ2KqMJgCw+Bg0Me2M+JNEr8l023ajn+nHwBoGkSGnhy/ytgwh9h4xcukotWn8XXVEpRkSCxLa47ytpZoTBInIxKLhNjYSVF7t8TkQL1uZfiDnrszyIDWvdUVXGdO8++BHz2mGd158OdGhpNVgQ+hd/XS0+AIL8cHXOlPtxV ansiblesource_kp
+
+go to ansible_target
+home/ubuntu/.ssh
+vim authorized_keys
+
+copy the public key of the source and paste
+
+i
+insert the copied public key
+escape 
+:wq!
+
+go to ansible_source
+ssh <private ip of the ansible_target>
+ssh 172.31.33.163
+
+
+ansible adhoc commands
+task .. create file on the target server
+
+go to ansible_source
+vim inventory
+keep the private ip address of the target server
+172.31.33.163
+
+ansible -i inventory all -m "shell" -a "touch devlopsclass"
