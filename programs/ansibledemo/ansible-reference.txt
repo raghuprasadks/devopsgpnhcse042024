@@ -49,3 +49,49 @@ keep the private ip address of the target server
 172.31.33.163
 
 ansible -i inventory all -m "shell" -a "touch devlopsclass"
+
+
+ansible playbooks
+
+install nginx,restart nginx
+vim first-playbook.yml
+---
+- name: Install and Start nginx
+  hosts: all
+  become: true
+  tasks:
+   - name: Install nginx
+     apt:
+      name: nginx
+      state: present
+   - name: Start nginx
+     shell: systemctl start nginx
+
+
+
+alternative
+shell: apt install nginx
+
+or
+service:
+ name: nginx
+ start: started
+
+
+ to execute the playbook
+ ansible-playbook -i inventory first-playbook.yml
+or
+
+ansible-playbook -v -i inventory first-playbook.yml
+
+ on the target server
+ sudo systemctl status nginx
+
+ ansible roles
+
+ mkdir second-playbook
+ cd second-playbook
+ ansible-galaxy role init kubernetes
+
+ ls kubernetes
+ ls -ltr kubernetes
